@@ -6,7 +6,7 @@ function install_http() {
   sudo apt-get install -y squid
 
   # 配置Squid代理服务器
-  sudo cat <<EOF | sudo tee /etc/squid/squid.conf
+  sudo tee /etc/squid/squid.conf > /dev/null <<EOL
   #
   # Recommended minimum configuration:
   #
@@ -88,7 +88,7 @@ function install_http() {
   refresh_pattern ^gopher: 1440    0%  1440
   refresh_pattern -i (/cgi-bin/|\?) 0   0%  0
   refresh_pattern .        0   20% 4320
-EOF
+EOL
 
   # 启动Squid代理服务器并设置开机自动启动
   sudo systemctl start squid
