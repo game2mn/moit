@@ -1,4 +1,4 @@
-#!/bin/bash -posix
+#!/bin/sh
 
 function install_http() {
   apt-get update
