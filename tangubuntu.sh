@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 function install_http() {
   apt-get update
   apt-get install -y squid # 安装http代理
